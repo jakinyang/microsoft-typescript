@@ -15,11 +15,13 @@ let employee1: Employee = {
 interface IceCream {
   flavor: string;
   scoops: number;
+  instructions?: string;
 }
 
 let icecreamOrderOne: IceCream = {
   flavor: "Vanilla",
   scoops: 3,
+  instructions?: "Make it big and generous",
 } 
 
 console.log(icecreamOrderOne.flavor);
@@ -32,4 +34,20 @@ function tooManyScoops(dessert: IceCream) {
   }
 }
 
-console.log(tooManyScoops({flavor: 'vanilla', scoops: 5}));
+console.log(tooManyScoops({flavor: 'vanilla', scoops: 5, instructions: "Make it big!"}));
+
+interface Sundae extends IceCream {
+  sauce: "chocolate" | "caramel" | "strawberry";
+  nuts?: boolean;
+  whippedCream?: boolean;
+  instructions?: string;
+}
+
+let sundaeOrder1: Sundae = {
+  flavor: 'vanilla',
+  scoops: 2,
+  sauce: 'caramel',
+  nuts: true,
+  whippedCream: true,
+  instructions: "Make it big!"
+}
