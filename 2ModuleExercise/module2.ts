@@ -36,3 +36,13 @@ enum ContractStatus {
 let employeeStatus: ContractStatus = ContractStatus.Permanent;
 console.log(employeeStatus);
 console.log(ContractStatus[employeeStatus]);
+
+/* 
+* Any
+*/
+let random: any = 10;
+random = "John Cena";
+random = true;
+random = {a: "John", b: "Cena"}
+console.log(random.name)
+console.log(random.a)
