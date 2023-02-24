@@ -1,18 +1,18 @@
 "use strict";
-/*
+/**
 * Number
 */
 let x;
 let y = 1;
 let z = 100n;
-/*
+/**
 * Boolean
 */
 let flag;
 let yes = true;
 let no = false;
 flag = no;
-/*
+/**
 String
 */
 let s;
@@ -21,7 +21,7 @@ let abc = 'abc';
 const firstName = "John";
 const lastName = "Cena";
 const sentence = `My name is ${firstName} ${lastName}`;
-/*
+/**
 * Enum
 */
 var ContractStatus;
@@ -33,7 +33,7 @@ var ContractStatus;
 let employeeStatus = ContractStatus.Permanent;
 console.log(employeeStatus);
 console.log(ContractStatus[employeeStatus]);
-/*
+/**
 * Any
 */
 let random = 10;
@@ -42,7 +42,7 @@ random = true;
 random = { a: "John", b: "Cena" };
 console.log(random.name);
 console.log(random.a);
-/*
+/**
 * Union Types
 */
 let multiType;
@@ -59,4 +59,16 @@ function add(x, y) {
 }
 console.log(add('one', 'two')); //* Returns "onetwo"
 console.log(add(1, 2)); //* Returns 3
-console.log(add('one', 2)); //* Returns error
+let myResult;
+myResult = "incomplete"; //* Valid
+myResult = "pass"; //* Valid
+let diceRoll;
+diceRoll = 1; //* Valid
+diceRoll = 2; //* Valid
+// diceRoll = 7;    //* Invalid
+/**
+ * Arrays & Tuples
+ */
+let list = [1, 2, 3];
+let list2 = [4, 5, 6];
+let tupele = ["John", 35];

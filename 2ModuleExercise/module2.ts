@@ -1,11 +1,11 @@
-/* 
+/**
 * Number
 */
 let x: number;
 let y = 1;
 let z: bigint = 100n;
 
-/* 
+/**
 * Boolean
 */
 let flag: boolean;
@@ -13,7 +13,7 @@ let yes = true;
 let no = false
 flag = no;
 
-/* 
+/**
 String
 */
 let s: string;
@@ -24,7 +24,7 @@ const firstName: string = "John";
 const lastName: string = "Cena";
 const sentence: string = `My name is ${firstName} ${lastName}`
 
-/* 
+/**
 * Enum
 */
 enum ContractStatus {
@@ -37,7 +37,7 @@ let employeeStatus: ContractStatus = ContractStatus.Permanent;
 console.log(employeeStatus);
 console.log(ContractStatus[employeeStatus]);
 
-/* 
+/**
 * Any
 */
 let random: any = 10;
@@ -47,7 +47,7 @@ random = { a: "John", b: "Cena" }
 console.log(random.name)
 console.log(random.a)
 
-/*
+/**
 * Union Types
 */
 let multiType: number | boolean;
@@ -67,7 +67,7 @@ console.log(add('one', 'two'));  //* Returns "onetwo"
 console.log(add(1, 2));          //* Returns 3
 // console.log(add('one', 2));      //* Returns error
 
-/* 
+/**
 * Literal
 */
 
@@ -82,3 +82,12 @@ let diceRoll: dice;
 diceRoll = 1;    //* Valid
 diceRoll = 2;    //* Valid
 // diceRoll = 7;    //* Invalid
+
+/**
+ * Arrays & Tuples
+ */
+let list: number[] = [1, 2, 3];
+
+let list2: Array<number> = [4, 5, 6];
+
+let tupele: [string, number] = ["John", 35]
