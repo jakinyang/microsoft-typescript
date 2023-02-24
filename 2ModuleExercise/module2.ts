@@ -19,3 +19,7 @@ String
 let s: string;
 let empty = "";
 let abc = 'abc';
+
+/* 
+* 
+*/
