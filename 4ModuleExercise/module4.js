@@ -36,3 +36,17 @@ function addDefaultNumbers(x, y = 25) {
 }
 console.log(addDefaultNumbers(1, 2));
 console.log(addDefaultNumbers(1));
+function addRestNumbers(x, ...restNumbers) {
+    let total = x;
+    for (let i = 0; i < restNumbers.length; i++) {
+        if (isNaN(restNumbers[i])) {
+            continue;
+        }
+        total += Number(restNumbers[i]);
+    }
+    return total;
+}
+function displayMessage({ text, sender }) {
+    console.log(`Message from ${sender}: ${text}`);
+}
+displayMessage({ sender: 'Christopher', text: 'hello, world' });
