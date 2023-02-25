@@ -16,3 +16,8 @@ let sum = function (input: number[]): number {
 }
 
 console.log(sum([1, 2, 3]));
+
+function displayAlert(message: string) {
+  alert(`The message is ${message}`);
+}
+
