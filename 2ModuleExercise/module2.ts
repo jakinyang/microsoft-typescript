@@ -90,4 +90,4 @@ let list: number[] = [1, 2, 3];
 
 let list2: Array<number> = [4, 5, 6];
 
-let tupele: [string, number] = ["John", 35]
+let tuple: [string, number] = ["John", 35]
