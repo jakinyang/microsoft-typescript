@@ -50,3 +50,17 @@ function displayMessage({ text, sender }) {
     console.log(`Message from ${sender}: ${text}`);
 }
 displayMessage({ sender: 'Christopher', text: 'hello, world' });
+let addThreeNumbers = (x, y, z) => {
+    if (z === undefined) {
+        return x + y;
+    }
+    else {
+        return x + y + z;
+    }
+};
+console.log(addThreeNumbers(1, 2, 3));
+console.log(addThreeNumbers(1, 2));
+let calculateNumAdd = (x, y) => x + y;
+let calculateNumSubtract = (x, y) => x - y;
+console.log(calculateNumAdd(1, 2));
+console.log(calculateNumSubtract(5, 3));

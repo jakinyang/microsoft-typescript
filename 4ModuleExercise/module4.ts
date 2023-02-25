@@ -59,8 +59,28 @@ interface Message {
   sender: string;
 }
 
-function displayMessage({text, sender}: Message) {
-   console.log(`Message from ${sender}: ${text}`);
+function displayMessage({ text, sender }: Message) {
+  console.log(`Message from ${sender}: ${text}`);
 }
 
-displayMessage({sender: 'Christopher', text: 'hello, world'});
+displayMessage({ sender: 'Christopher', text: 'hello, world' });
+
+let addThreeNumbers = (x: number, y: number, z?: number): number => { 
+  if (z === undefined) {
+    return x + y;
+  } else {
+    return x + y + z; 
+  }
+};
+
+console.log(addThreeNumbers(1, 2, 3));
+console.log(addThreeNumbers(1, 2));
+
+type calculator = (x: number, y: number) => number;
+
+let calculateNumAdd: calculator = (x: number, y: number): number => x + y;
+let calculateNumSubtract: calculator = (x: number, y: number): number => x - y;
+
+console.log(calculateNumAdd(1, 2));
+console.log(calculateNumSubtract(5, 3));
+
