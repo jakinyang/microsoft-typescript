@@ -1,6 +1,6 @@
-function addNumbers(x: number, y: number): number {
-  return x + y;
-}
+// function addNumbers(x: number, y: number): number {
+//   return x + y;
+// }
 
 console.log(addNumbers(1, 2));
 
@@ -20,3 +20,26 @@ function sum(input: number[]): number {
   }
   return total;
 }
+
+function addNumbers(x: number, y: number): number {
+  return x + y;
+}
+
+console.log(addNumbers(1, 2));
+
+function addOptionalNumbers(x: number, y?: number): number {
+  if (y === undefined) {
+    return x;
+  } else {
+    return x + y;
+  }
+}
+
+console.log(addOptionalNumbers(1 ,2))
+console.log(addOptionalNumbers(2))
+
+function addDefaultNumbers(x: number, y: number = 25): number {
+  return x + y;
+}
+console.log(addDefaultNumbers(1, 2));
+console.log(addDefaultNumbers(1));

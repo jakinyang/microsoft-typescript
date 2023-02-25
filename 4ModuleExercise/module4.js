@@ -1,7 +1,7 @@
 "use strict";
-function addNumbers(x, y) {
-    return x + y;
-}
+// function addNumbers(x: number, y: number): number {
+//   return x + y;
+// }
 console.log(addNumbers(1, 2));
 console.log(sum([1, 2, 3]));
 function displayAlert(message) {
@@ -17,3 +17,22 @@ function sum(input) {
     }
     return total;
 }
+function addNumbers(x, y) {
+    return x + y;
+}
+console.log(addNumbers(1, 2));
+function addOptionalNumbers(x, y) {
+    if (y === undefined) {
+        return x;
+    }
+    else {
+        return x + y;
+    }
+}
+console.log(addOptionalNumbers(1, 2));
+console.log(addOptionalNumbers(2));
+function addDefaultNumbers(x, y = 25) {
+    return x + y;
+}
+console.log(addDefaultNumbers(1, 2));
+console.log(addDefaultNumbers(1));
