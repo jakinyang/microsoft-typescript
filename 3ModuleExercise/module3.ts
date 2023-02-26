@@ -21,7 +21,7 @@ interface IceCream {
 let icecreamOrderOne: IceCream = {
   flavor: "Vanilla",
   scoops: 3,
-  instructions?: "Make it big and generous",
+  instructions: "Make it big and generous",
 } 
 
 console.log(icecreamOrderOne.flavor);
