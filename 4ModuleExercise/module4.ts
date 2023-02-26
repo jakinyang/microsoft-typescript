@@ -76,7 +76,10 @@ let addThreeNumbers = (x: number, y: number, z?: number): number => {
 console.log(addThreeNumbers(1, 2, 3));
 console.log(addThreeNumbers(1, 2));
 
-type calculator = (x: number, y: number) => number;
+// type calculator = (x: number, y: number) => number;
+interface calculator {
+  (x: number, y: number): number;
+}
 
 let calculateNumAdd: calculator = (x: number, y: number): number => x + y;
 let calculateNumSubtract: calculator = (x: number, y: number): number => x - y;
@@ -84,3 +87,12 @@ let calculateNumSubtract: calculator = (x: number, y: number): number => x - y;
 console.log(calculateNumAdd(1, 2));
 console.log(calculateNumSubtract(5, 3));
 
+let doCalculation = (operation: 'add' | 'subtract'): calculator => {
+  if (operation ==='add') {
+    return calculateNumAdd;
+  } else {
+    return calculateNumSubtract;
+  }
+}
+
+console.log(doCalculation('add')(5, 5));

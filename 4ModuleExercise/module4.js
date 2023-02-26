@@ -64,3 +64,12 @@ let calculateNumAdd = (x, y) => x + y;
 let calculateNumSubtract = (x, y) => x - y;
 console.log(calculateNumAdd(1, 2));
 console.log(calculateNumSubtract(5, 3));
+let doCalculation = (operation) => {
+    if (operation === 'add') {
+        return calculateNumAdd;
+    }
+    else {
+        return calculateNumSubtract;
+    }
+};
+console.log(doCalculation('add')(5, 5));
