@@ -76,3 +76,32 @@ console.log(Car.getCarCount());
 console.log(car3.accelerate(105));
 console.log(car3.brake());
 console.log(car3.turn('right'));
+/**
+ * Class Extension
+ */
+class ElectricCar extends Car {
+    // Constructor
+    constructor(make, color, range, doors = 4) {
+        super(make, color, doors);
+        this._range = range;
+    }
+    // Accessors
+    get range() {
+        return this._range;
+    }
+    set range(range) {
+        this._range = range;
+    }
+    // Methods
+    charge() {
+        console.log(`${this.worker()} is charging.`);
+    }
+    // Method Override
+    brake() {
+        return `${this.worker()} is braking with the regeneratvie braking system.`;
+    }
+}
+let spark = new ElectricCar('Chevrolet', 'green', 124, 2);
+let tesla = new ElectricCar('Tesla', 'red', 300, 2);
+console.log(tesla.brake());
+tesla.charge();
