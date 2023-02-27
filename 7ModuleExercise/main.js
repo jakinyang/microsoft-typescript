@@ -22,10 +22,21 @@ var __importStar = (this && this.__importStar) || function (mod) {
     __setModuleDefault(result, mod);
     return result;
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 const module7_1 = require("./module7");
 const allGreetingFunctions = __importStar(require("./module7")); // imports all exported components in the module
 const greetings_utilities_module_1 = require("./greetings-utilities-module");
+const dotenv_1 = __importDefault(require("dotenv"));
+const result = dotenv_1.default.config();
+if (result.error) {
+    throw result.error;
+}
+console.log(result.parsed);
+console.log(process.env.DB_HOST);
+console.log(process.env.WEB_HOST);
 (0, module7_1.returnGreeting)('Hola!'); // Displays 'The message from Greetings_module is Hola!'
 allGreetingFunctions.returnGreeting('Bonjour'); // Displays 'The message from Greetings_module is Bonjour!'
 (0, greetings_utilities_module_1.returnGreeting)('Ciao!'); // Displays 'The message from GreetingsWithLength_module is Ciao! It is 5 characters long.'
