@@ -37,8 +37,75 @@ function idGeneric<T extends ValidArgTypes, U>(value: T, message: U): ValidArgTy
   return result;
 }
 
-let numberValue = identity<number, string>(100, 'Hello');
-let stringValue = identity<string, string>('100', 'Hello');
+let numberValue = idGeneric<number, string>(100, 'Hello');
+let stringValue = idGeneric<string, string>('100', 'Hello');
 
 console.log(numberValue);       // Returns 200
 console.log(stringValue);       // Returns 100100
+
+interface Identity<T, U> {
+  value: T;
+  message: U;
+}
+
+let interfaceGeneric: Identity<number, string> = {
+  value: 25,
+  message: "Hello Typescript!",
+}
+
+let otherGeneric: Identity<string, boolean> = {
+  value: "Hello again!",
+  message: true,
+}
+
+interface ProcessIdentity<T, U> {
+  (value: T, message: U): T;
+}
+
+function processIdentity<T, U> (value: T, message: U): T {
+  console.log(message);
+  return value;
+}
+
+let processor: ProcessIdentity<number, string> = processIdentity;
+
+interface ProcessId<T, U> {
+  value: T;
+  message: U;
+  process(): T;
+}
+
+class processId<X, Y> implements ProcessId<X, Y> {
+  value: X;
+  message: Y;
+  constructor(val: X, msg: Y) {
+    this.value = val;
+    this.message = msg;
+  }
+
+  process(): X {
+    console.log(this.message);
+    return this.value;
+  }
+}
+
+let processorOfId = new processId<number, string>(100, "Hello TypeScript!");
+processorOfId.process()
+
+class Car {
+  make: string = 'Generic Car';
+  doors: number = 4;
+}
+class ElectricCar extends Car {
+  make = 'Electric Car';
+  doors = 4
+}
+class Truck extends Car {
+  make = 'Truck';
+  doors = 2
+}
+function accelerate<T extends Car> (car: T): T {
+  console.log(`All ${car.doors} doors are closed.`);
+  console.log(`The ${car.make} is now accelerating!`)
+  return car
+}
